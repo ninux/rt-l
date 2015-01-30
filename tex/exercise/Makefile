@@ -11,6 +11,8 @@ LATEX_PDF = $(DOCUMENT).pdf
 
 .PHONY:	doc clean
 
+all: doc clean
+
 doc:
 	for i in {1..$(LATEX_ITERATIONS)}; \
 		do pdflatex $(DOCUMENT).tex; \

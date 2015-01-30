@@ -1,0 +1,91 @@
+\section{Übertragungsfunktionen}
+\subsection{$P_1(s)$}
+Es soll die Übertragungsfunktion hergeleitet werden für $P_1(s)$ mit
+\[
+	P_1(s) = \frac{\Omega(s)}{U(s)},
+	\qquad
+	\omega(t) \laplace \Omega(s),
+	u(t) \laplace U(s)
+\]
+Für die Herleitung können die beiden Funktionen $\omega(t)$ und $u(t)$ mit
+den Transformationssätzen den Laplace-Transformation überfürt werden vom
+Zeitbereich in den Spektralbereich.
+\subsubsection{Laplace-Tranformierte von $\omega(t)$}
+\[
+	\omega(t)
+	= x \int\omega(t)\,dt
+		+ y \int u(t)\,dt
+		+ z \int \Gamma_l(t)\,dt
+\]
+Die Funktion lässt sich mit dem Linearitätssatz und dem Integrationssatz
+überführen in den Spektralbereich zu.
+\[
+	\Omega(s)
+	= x \frac{1}{s} \Omega(s)
+		+ y \frac{1}{s} U(s)
+		+ z \frac{1}{s} \Gamma_l(s)
+	= \frac{1}{s} \left( x \Omega(s) + y U(s) + z \Gamma(s) \right)		
+\]
+Nun kann die Funktion für $\Omega(s)$ explizit ufgestellt werden.
+\[
+	\Omega(s) - x \frac{1}{s} \Omega(s)
+	= y \frac{1}{s} U(s) + z \frac{1}{s} \Gamma_l(s)
+\]
+\[
+	\Omega(s) \left( 1 - x \frac{1}{s} \right)
+	= y \frac{1}{s} U(s) + z \frac{1}{s} \Gamma_l(s) 
+\]
+\[
+	\Omega(s)
+	= \frac{
+			y \frac{1}{s} U(s) + z \frac{1}{s} \Gamma_l(s)
+		}{
+			1 - x \frac{1}{s}
+		}
+	= \frac{
+			\frac{1}{s} \left( y U(s) + z \Gamma_l(s) \right)
+		}{
+			1 - x \frac{1}{s}
+		}
+	= \frac{1}{s} \left( \frac{
+			y U(s) + z \Gamma_l(s)	
+		}{
+			1 - x \frac{1}{s}
+		} \right)
+\]
+
+\subsubsection{Laplace-Tranformierte von $u(t)$}
+Aus der ursprünglichen Differentialgleichung ergibt sich die Funktion
+$u(t)$ zu
+\[
+	u(t)
+	= \frac{1}{y} \left( \dot\omega(t)
+		- x \omega(t)
+		- z \Gamma(t) \right)
+\]
+Für die Überführung in den Spektralbereich kann der Linearitätssatz und der
+Differentiationssatz der Laplace-Transformation verwendet werden.
+\[
+	U(s)
+	= \frac{1}{y} \left( s \Omega(s)
+		-  x \Omega(s)
+		-  z \Omega(s) \right) - u(0^-)
+\]
+
+\subsubsection{Zusammensetzen der Laplace-Trasformierten}
+\[
+	P_1(s) =
+		\frac{
+			\frac{1}{s} \left(
+				\frac{y U(s) + z \Gamma_l(s)}{1 - x \frac{1}{s}}
+			\right)
+		}{
+			\frac{1}{y} \left(
+				s \Omega(s)
+				- x \Omega(s)
+				- z \Gamma(s) 
+			\right) - u(0^-)
+		}
+\]
+
+\subsection{$P_2(s)$}

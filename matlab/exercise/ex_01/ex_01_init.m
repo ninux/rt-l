@@ -4,10 +4,14 @@ J = 0.00025;    % moment of intertia
 K = 0.05;       % motor constant
 R = 0.5;        % motor winding resistance
 
+% other definitions
+tau = (J*R)/(K^2 + a*R);
+Kp = K/(K^2 + a*R);
+
 % define substitutions
 x = -(1/J) * (a + (K^2/R));
 y = (K/(J*R));
 z = -(1/J);
 
 % define inputs
-G = 0;      % torque
+G = 0;          % torque

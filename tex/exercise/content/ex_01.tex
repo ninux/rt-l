@@ -64,21 +64,21 @@ Um die plausibilität des Modells zu prüfen weden spezifische Zustände geprüf
 Wird der Motor mit positiver Spannung und ohne Lastmoment betireben, so muss
 sich eine positive Drehzahl einstellen. Die Motorspannung ist mit einer
 Sprungfunktion gegeben mit der Amplitude 1. Die Simulation zeigt, dass sich
-eine Drehzahl von 5 einstellt.
+eine Drehzahl von 19.6 einstellt.
 
 \subsubsection{Belastete Welle}
 Liegt ein positives Lastmoment an, wobei keine Spannung anliegt, so muss sich
 eine negative Drehzahl einstellen. Für diese Prüfung ist ein Lastmoment
 $\Gamma(t) = const. = 1$ gewählt worden. Die Simulation zeigt, dass sich eine
-Drehzahl von -0.5 einstellt.
+Drehzahl von -196 einstellt.
 
 \subsubsection{Überbelastete Welle}
 Wird der Motor mit einem grossen Lastmoment belastet, so muss sich eine
 negative Drehzahl einstellen. Das Lastmoment ist konstant gewählt als
-$\Gamma(t) = const. = 10$ und die Motorspannung ist als Sprungfunktion
-gegeben mit der Amplitude 5. Die Simulation zeigt, dass sich vor dem Sprung
-eine Drehazhl von -5 einstellt durch das Lastmoment. Nach den Sprung
-resultiert eine Drehzahl von -2.5 durch das entgegenwirken des Motors.
+$\Gamma(t) = const. = 2$ und die Motorspannung ist als Sprungfunktion
+gegeben mit der Amplitude 10. Die Simulation zeigt, dass sich vor dem Sprung
+eine Drehazhl von -392 einstellt durch das Lastmoment. Nach den Sprung
+resultiert eine Drehzahl von -196 durch das entgegenwirken des Motors.
 
 \subsubsection{Anfangsbedingung $\omega(t=0) \neq 0$}
 Liegt weder ein Lastmoment an der Welle noch eine Spannung am Motor, so muss
@@ -89,10 +89,10 @@ der Zeit. Dies gilt sowohl für positive als auch negative Anfangsbedingungen.
 \subsubsection{Sinus als Eingangsfunktion}
 Wird eine Sinusfunktion für die Motorspannung gewählt, so muss sich auch
 eine Sinusgrösse am Ausgang einstellen. Dies muss für jedes anliegende
-Lastmoment an der Welle gelten. Die Simulationen haben gezeigt, dass sich
-für alle Lastmomente eine Sinusförmige Drehzahl ergibt für eine Sinusförmige
-Motorspannung. der Offset der Sinuskurve am Ausgang ist dabei gegeben durch
-das anliegenede Lastmoment.
+Lastmoment an der Welle gelten. Ein anliegendes Lastmoment muss desn Offset
+der Sinuskurve bilden.
+
+FEHLER!!!
 
 \subsubsection{Fazit}
 Die Plausibilitätsprüfungen deuten darauf hin, dass das modellierte System

@@ -1,131 +1,67 @@
 \section{Übertragungsfunktionen}
+
 \subsection{$P_1(s)$}
-Es soll die Übertragungsfunktion hergeleitet werden für $P_1(s)$ mit
+Die Übertragungsfunktion $P_1(s)$ ist gegeben als
 \[
-	P_1(s) = \frac{\Omega(s)}{U(s)},
-	\qquad
-	\omega(t) \laplace \Omega(s),
-	u(t) \laplace U(s)
+	P_1(s) = \frac{\Omega(s)}{U(s)}
 \]
-Für die Herleitung können die beiden Funktionen $\omega(t)$ und $u(t)$ mit
-den Transformationssätzen den Laplace-Transformation überfürt werden vom
-Zeitbereich in den Spektralbereich.
-\subsubsection{Laplace-Tranformierte von $\omega(t)$}\label{sec:ex_2a}
+Um diese Übertragungsfunktion herzuleiten muss die ursprüngliche
+Differetialgleichung betrachtet werden.
 \[
-	\omega(t)
-	= x \int\omega(t)\,dt
-		+ y \int u(t)\,dt
-		+ z \int \Gamma_l(t)\,dt
+	\dot\omega(t) = x \omega(t) + y u(t) + z \Gamma(t)
 \]
-Die Funktion lässt sich mit dem Linearitätssatz und dem Integrationssatz
-überführen in den Spektralbereich zu.
+Da für diese Übertragungsfunktion $\omega(t)$ von Interesse ist, kann die
+Funktion dementsprechend in die explizite Form für $\omega(t)$ umgeformt
+werden. Dies ist mittels der Integration nach der Zeit $t$ zu bewerkstelligen.
 \[
-	\Omega(s)
-	= x \frac{1}{s} \Omega(s)
+	\omega(t) =
+		x \int\omega(t)\,dt
+		+ y \int U(t)\,dt 
+		+ z \int\Gamma(t)\,dt
+\]
+Um nun diese Differetialgleichung in den Spektralbereich zu überführen,
+können der Linearitätssatz und der Integrationssatz der Laplace-Transformation
+genutzt werden.
+\[
+	\Omega(s) =
+		x \frac{1}{s} \Omega(s) 
 		+ y \frac{1}{s} U(s)
-		+ z \frac{1}{s} \Gamma_l(s)
-	= \frac{1}{s} \left( x \Omega(s) + y U(s) + z \Gamma(s) \right)		
+		+ z \frac{1}{s} \Gamma(s) 
 \]
-Nun kann die Funktion für $\Omega(s)$ explizit ufgestellt werden.
+Die nun vorliegende Gleichung im Spektralbereich ist so umzuformen, dass diese
+als Qoutient von Ein- und Ausgangsgrösse dargestellt werden kann. In einem
+ersten Schritt sind die entsprechenden Termen zu faktorisieren.
 \[
-	\Omega(s) - x \frac{1}{s} \Omega(s)
-	= y \frac{1}{s} U(s) + z \frac{1}{s} \Gamma_l(s)
-\]
-\[
-	\Omega(s) \left( 1 - x \frac{1}{s} \right)
-	= y \frac{1}{s} U(s) + z \frac{1}{s} \Gamma_l(s) 
+	\Omega(s) - x \frac{1}{s} \Omega(s) =
+		y \frac{1}{s} U(s) + z \frac{1}{s} \Gamma(s)
 \]
 \[
-	\Omega(s)
-	= \frac{
-			y \frac{1}{s} U(s) + z \frac{1}{s} \Gamma_l(s)
-		}{
-			1 - x \frac{1}{s}
-		}
-	= \frac{
-			\frac{1}{s} \left( y U(s) + z \Gamma_l(s) \right)
-		}{
-			1 - x \frac{1}{s}
-		}
-	= \frac{1}{s} \left( \frac{
-			y U(s) + z \Gamma_l(s)	
-		}{
-			1 - x \frac{1}{s}
-		} \right)
+	\Omega(s) \left[ 1 - x \frac{1}{s} \right] =
+		U(s) \left[ y \frac{1}{s} \right]
+		+ \Gamma(s) \left[ z \frac{1}{s}\right]
+\]
+Betrachtet man die nun vorliegende Gleichung, so stellt man fest, dass eine
+Summe vorliegt welche die Bildung des gewünschten Quotienten verhindert.
+Betrachtet man diese Gleichung genauer und führt eine Identifikation durch, so
+stellt sich heraus, dass einer der Summanden nicht zum relevanten Signalpfad
+gehört. Somit kann dieser Teil der Gleichung gestrichen werden
+(``\emph{single input, single output}'').
+\[
+	\underbrace{\Omega(s) \left[ 1 - x \frac{1}{s} \right]}_{Ausgang} =
+		\underbrace{U(s) \left[ y \frac{1}{s} \right]}_{Eingang 1}
+		+ \underbrace{\Gamma(s) \left[ z \frac{1}{s}\right]}_{Eingang 2}
+	\qquad \Gamma(s) = 0 \Rightarrow
+		\Omega(s) \left[ 1 - x \frac{1}{s} \right] =
+		U(s) \left[ y \frac{1}{s} \right]
+\]
+Mit dieser Reduktion lässt sich nun die Übertragungsfunktion $P_1(s)$
+formulieren.
+\[
+	P_1(s) = \frac{\Omega(s)}{U(s)} =
+		\frac{y \frac{1}{s}}{1 - x \frac{1}{s}} = 
+		\frac{\frac{1}{s} y}{\frac{1}{s} (s-x)} =
+		\frac{y}{s-x}
 \]
 
-\subsubsection{Laplace-Tranformierte von $u(t)$}
-Aus der ursprünglichen Differentialgleichung ergibt sich die Funktion
-$u(t)$ zu
-\[
-	u(t)
-	= \frac{1}{y} \left( \dot\omega(t)
-		- x \omega(t)
-		- z \Gamma(t) \right)
-\]
-Für die Überführung in den Spektralbereich kann der Linearitätssatz und der
-Differentiationssatz der Laplace-Transformation verwendet werden.
-\[
-	U(s)
-	= \frac{1}{y} \left( s \Omega(s)
-		-  x \Omega(s)
-		-  z \Omega(s) \right) - u(0^-)
-\]
-
-\subsubsection{Zusammensetzen der Laplace-Trasformierten}
-\[
-	P_1(s) =
-		\frac{
-			\frac{1}{s} \left(
-				\frac{y U(s) + z \Gamma_l(s)}{1 - x \frac{1}{s}}
-			\right)
-		}{
-			\frac{1}{y} \left(
-				s \Omega(s)
-				- x \Omega(s)
-				- z \Gamma(s) 
-			\right) - u(0^-)
-		}
-\]
 
 \subsection{$P_2(s)$}
-Es soll die Übertragungsfunktion hergeleitet werden für $P_2(s)$ mit
-\[
-	P_2(s) = \frac{\Omega(s)}{\Gamma_l(s)}
-\]
-
-\subsubsection{Laplace-Tranformierte von $\omega(t)$}
-Siehe \ref{sec:ex_2a}.
-
-\subsubsection{Laplace-Tranformierte von $\Gamma_l(t)$}
-Aus der ursprünglichen Differentialgleichung ergibt sich die Funktion
-$\Gamma_l(t)$ zu
-\[
-	\Gamma_l(t)
-	= \frac{1}{z} \left( \dot\omega(t) - x \omega(t) - y U(t) \right)
-\]
-Für die Überführung in den Spektralbereich kann der Linearitätssatz und der
-Differentiationssatz der Laplace-Transformation verwendet werden.
-\[
-	\Gamma_l(s)
-	= \frac{1}{z} \left(
-		s \Omega(s)
-		- u(0^-)
-		- x \Omega(s)
-		- y U(s)
-	\right)
-\]
-
-\subsubsection{Zusammensetzen der Laplace-Trasformierten}
-\[
-	P_2(s) = \frac{\Omega(s)}{\Gamma_l(s)}
-	= \frac{
-			\frac{1}{s} \left(
-				\frac{y U(s) + z \Gamma_l(s)}{1 - x \frac{1}{s}}
-			\right)
-		}{
-			\frac{1}{z} \left(
-				s \Omega(s) - \omega(0^-) - x \Omega(s) - y U(s)
-			\right)
-		}
-\]

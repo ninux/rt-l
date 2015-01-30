@@ -63,5 +63,57 @@ formulieren.
 		\frac{y}{s-x}
 \]
 
-
 \subsection{$P_2(s)$}
+Die Übertragungsfunktion $P_2(s)$ ist gegeben als
+\[
+	P_2(s) = \frac{\Omega(s)}{\Gamma(s)}
+\]
+Um diese Übertragungsfunktion herzuleiten muss die ursprüngliche
+Differetialgleichung betrachtet werden.
+\[
+	\dot\omega(t) = x \omega(t) + y u(t) + z \Gamma(t)
+\]
+Da für die Übertragungsfunktion $\Gamma(t)$ von Interesse ist, kann die
+Funktion dementsprechend in die explizite Form für $\Gamma(t)$ umgeformt
+werden.
+\[
+	\Gamma(t) = \frac{1}{z} \left(
+			\dot\omega(t) - x \omega(t) - y u(t)
+		\right)
+\]
+Um nun diese Differetialgleichung in den Spektralbereich zu überführen, kann
+der Linearitätssatz und der Differentiationssatz der Laplace-Transformation
+verwendet werden.
+\[
+	\Gamma(s) = \frac{1}{z} \left(
+			s \Omega(s) - \omega(0^-) - x \Omega(s) - y U(s)
+		\right)
+\]
+Die nun vorliegende Gleichung im Spektralbereich ist so umzuformen, dass diese
+als Quotient von Ein- und Ausgangsgrösse dargestellt werden kann.
+\[
+	\Gamma(s) = \frac{1}{z} \left(
+			\Omega(s) \left[ s-x \right] - \omega(0^-) - y U(s)
+		\right)
+\]
+Betrachtet man die nun vorliegende Gleichung, so stellt man fest, dass eine
+Summe vorliegt welche die Bildung des gewünschten Quotienten verhindert.
+Betrachtet man diese Gleichung genauer und führt eine Identifikation durch, so
+stellt sich heraus, dass einer der Summanden nicht zum relevanten Signalpfad
+gerhört. Somit kann dieser Teil der Gleichung gestrichen werden. Weiter ist
+zu erkennen, dass eine Anfangsbedingung vorliegt, welche man auch voraussetzen
+kann mit 0.
+\[
+	\underbrace{\Gamma(s)}_{Eingang 1} = \frac{1}{z} \left(
+			\underbrace{\Omega(s) \left[ s-x \right]}_{Ausgang}
+			\underbrace{- \omega(0^-)}_{\begin{subarray}{c}Anfangs-\\ bedingung\end{subarray}}
+			\underbrace{- y U(s)}_{Eingang 2}
+		\right)
+	\qquad U(s) = \omega(0^-) = 0 \Rightarrow \Gamma(s) =
+		\frac{1}{z} \left[ s-x \right]
+\]
+Mit dieser Reduktion lässt sich nun die Übertragungsfunktion $P_2(s)$
+formulieren.
+\[
+	P_2(s) = \frac{\Omega(s)}{\Gamma(s)} = \frac{z}{s-x}
+\]

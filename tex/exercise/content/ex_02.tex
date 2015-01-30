@@ -10,7 +10,7 @@ Es soll die Übertragungsfunktion hergeleitet werden für $P_1(s)$ mit
 Für die Herleitung können die beiden Funktionen $\omega(t)$ und $u(t)$ mit
 den Transformationssätzen den Laplace-Transformation überfürt werden vom
 Zeitbereich in den Spektralbereich.
-\subsubsection{Laplace-Tranformierte von $\omega(t)$}
+\subsubsection{Laplace-Tranformierte von $\omega(t)$}\label{sec:ex_2a}
 \[
 	\omega(t)
 	= x \int\omega(t)\,dt
@@ -89,3 +89,43 @@ Differentiationssatz der Laplace-Transformation verwendet werden.
 \]
 
 \subsection{$P_2(s)$}
+Es soll die Übertragungsfunktion hergeleitet werden für $P_2(s)$ mit
+\[
+	P_2(s) = \frac{\Omega(s)}{\Gamma_l(s)}
+\]
+
+\subsubsection{Laplace-Tranformierte von $\omega(t)$}
+Siehe \ref{sec:ex_2a}.
+
+\subsubsection{Laplace-Tranformierte von $\Gamma_l(t)$}
+Aus der ursprünglichen Differentialgleichung ergibt sich die Funktion
+$\Gamma_l(t)$ zu
+\[
+	\Gamma_l(t)
+	= \frac{1}{z} \left( \dot\omega(t) - x \omega(t) - y U(t) \right)
+\]
+Für die Überführung in den Spektralbereich kann der Linearitätssatz und der
+Differentiationssatz der Laplace-Transformation verwendet werden.
+\[
+	\Gamma_l(s)
+	= \frac{1}{z} \left(
+		s \Omega(s)
+		- u(0^-)
+		- x \Omega(s)
+		- y U(s)
+	\right)
+\]
+
+\subsubsection{Zusammensetzen der Laplace-Trasformierten}
+\[
+	P_2(s) = \frac{\Omega(s)}{\Gamma_l(s)}
+	= \frac{
+			\frac{1}{s} \left(
+				\frac{y U(s) + z \Gamma_l(s)}{1 - x \frac{1}{s}}
+			\right)
+		}{
+			\frac{1}{z} \left(
+				s \Omega(s) - \omega(0^-) - x \Omega(s) - y U(s)
+			\right)
+		}
+\]

@@ -23,3 +23,28 @@ Wendet man den Endwertsatz an auf die gegebenen Funktionen so ergibt sich
 	} \cdot \frac{1}{s}
 	= \frac{K_p \cdot K_{g_1}}{1 + K_p \cdot K_{g_1}}
 \]
+Nun wird deutlich, dass die Regeldifferenz direkt von der Auslegung der
+Propotionalitätskonstante $K_p$ des Reglers abhängt. Wählt man beispielsweise
+ein $K_p$, so dass dieses dem reziproken Wert des $K_{g_1}$ entspricht, so
+ergibt sich ein Propotionalitätfaktor von $K_p \cdot K_{g_1} = 1$. Setzt man
+dies ein, so ergibt sich ein Endwert von 
+\[
+	\omega(\infty) = \frac{1}{1+1} = \frac{1}{2} = 0.5 = 50\%	
+\]
+Wird das $K_p$ hingegen kleiner ${K_{g_1}}^{-1}$ gewählt, so wird der Endwert
+nochmals kleiner als bei der Gleichheit.
+\[
+	K_p < \frac{1}{K_{g_1}}
+	\Rightarrow K_p \cdot K_{g_1} < 1 
+		\Rightarrow \omega(\infty) \xrightarrow{K_p \rightarrow 0} 0
+\]
+Wird das $K_p$ hingegen grösser gewählt, so wird der Endwert höher.
+\[
+	K_p > \frac{1}{K_{g_1}}
+	\Rightarrow K_p \cdot K_{g_1} > 1
+		\Rightarrow \omega(\infty) \xrightarrow{K_p \rightarrow \infty} 1
+\]
+
+\subsection{Prüdung der Endwerte mit MATLAB/Simulink}
+Die Simulation des Systems mit Simulink bestätigt die Annahmen, welche sich
+durch den Endwertsatz ergeben.

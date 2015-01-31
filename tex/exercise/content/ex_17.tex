@@ -1,0 +1,29 @@
+\section{Reglerauslegung}
+Die Auslegung des Proportionalitätsfaktors $K_p$ des Reglers, unter
+Berücksichtigung der Stabilitätsanalyse und des stationären Regelfehlers,
+sollte nach Möglichkeit hoch ausfallen. Dies beweikt, dass der stationäre
+Regelfehler gegen 0 strebt. Die Stabilität ist hiervon nicht tangiert
+(vorausgesetzt das Lastmoment ist $\Gamma = 0$).
+
+Wird ein Lastmoment $\Gamma \neq 0$ angelegt, so gilt die obige aussage
+nicht. Denn der Einfluss der Störgrösse wird überlagert auf die
+Ausgangsgrösse. Je höher der Proportionalitätsfaktor gewählt wird, desto
+höher ist die Schwingneigung. 
+
+Simulationen mit dem Modell in MATLAB/Simulink zeigen, dass sich mit einem
+hohen $K_p$ und einem $\Gamma \neq 0$ nie ein stationärer Wert am Ausgang
+einstellt bei konstanter Führungsgrösse. Wählt man das $K_p$ jedoch kleiner,
+so wird die Amplitude und Frequenz der Schwingungen heruntergesetzt.
+
+Betrachtet man die Störübertragungsfunktion im Bode-Diagramm (siehe Abbildung
+\ref{fig:ex_17_bode_p2}), so erkennt man, dass dort eine massive
+DC-Verstärkung $G_0 > 45$dB vorliegt. Zuden ist zu erkennen, dass die
+Phase nicht bei $0^{\circ}$ beginnt, sondern bei $180^{\circ}$. Dies ist so,
+da die Störung sich negativ, also der Drehzahl $\omega$ entgegenwikrt.
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=1\textwidth]{../../matlab/exercise/ex_17/ex_17_bode_p2.pdf}
+	\caption{Bode-Diagramm der Störübertragungsfunktion $P_2(s)$}
+	\label{fig:ex_17_bode_p2}
+\end{figure}

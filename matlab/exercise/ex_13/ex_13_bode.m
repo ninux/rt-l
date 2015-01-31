@@ -24,10 +24,12 @@ print -dpdf ex_13_bode.pdf
 [Cb_ar, Cb_pr, Cb_wcg, Cb_wcp] = margin(Cb*P1);
 
 % print the parameters
-fprintf('Parameter:\tC\tCa\tCb\n')
-fprintf('A.-Reserve:\t%i\t%i\t%i\n', C_ar, Ca_ar, Cb_ar);
-fprintf('P.-Reserve:\t%i\t%i\t%i\n', C_pr, Ca_pr, Cb_pr);
-fprintf('fg:\t\t\t%i\t%i\t%i\n', C_wcg, Ca_wcg, Cb_wcg);
-fprintf('f0:\t\t\t%i\t%i\t%i\n', C_wcp, Ca_wcp, Cb_wcp);
+file = fopen('results.txt', 'w');
+fprintf(file, 'Parameter:\tC=%1.2i, C=%1.2i, C=%1.2i\n', C, Ca, Cb);
+fprintf(file, 'A.-Reserve:\t%1.2i, %1.2i, %1.2i\n', C_ar, Ca_ar, Cb_ar);
+fprintf(file, 'P.-Reserve:\t%1.2i, %1.2i, %1.2i\n', C_pr, Ca_pr, Cb_pr);
+fprintf(file, 'Grenzfreq.:\t%1.2i, %1.2i, %1.2i\n', C_wcg, Ca_wcg, Cb_wcg);
+fprintf(file, 'G0-Freq.:\t%1.2i, %1.2i, %1.2i\n', C_wcp, Ca_wcp, Cb_wcp);
+fclose(file);
 
 % get the system-parameters

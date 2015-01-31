@@ -1,0 +1,48 @@
+\section{Steuerung}
+
+\subsection{Steuerung als Inversion der Strecke}
+Für die vorliegende Strecke soll geprüft werden, ob eine Steuerung als
+Inversion der Strecke gewäht werden kann. Die Stecke hat die
+Übertragungsfunktion
+\[
+	P_1(s) = \frac{y}{s-x} = \frac{400}{s + 20.4}
+\]
+Nimmt man für die Steuerung die Inversion dieser Strecke, so ergibt sich
+\[
+	S_t(s) = \frac{s-x}{y} = \frac{s + 20.4}{400}
+\]
+Die Übertragungsfunktion für den Signalpfad ergibt somit
+\[
+	G_0(s) = S_t(s) \cdot P_1(s) = P_1^{-1}(s) \cdot P_1(s) = 1
+\]
+Betrachtet man die beiden Übertragungsglieder, so stellt man fest, dass 
+$P_1(s)$ eine Tiefpass und $S_t(s)$ einen Hochpass darstellt. Ist solch
+eine Steuerung realisierbar? Um dies zu klären muss die Übertragungsfunktion
+der Steuerung genauer betrachtet werden.
+\[
+	S_t(s) = \frac{s-x}{y}
+\]
+Um die Signale im Zeitbereich zu betrachten, muss die Übertragungsfunktion
+mit der inversen Laplace-Transformation aus dem Spektralbereich in den
+Zeitbereich überführt werden.
+\[
+	\mathcal{L}^{-1} \left\{ S_t(s) \right\}
+	= \left\{ \frac{s-x}{y} \right\}
+\]
+Mit dem Linearitätssatz lässt sich die Transformation vereinfachen zu
+\[
+	\frac{1}{y} \cdot \mathcal{L}^{-1} \left\{ s-x \right\}
+	\Rightarrow
+	\frac{1}{y} \cdot \left(
+		\underbrace{\mathcal{L}^{-1} \left\{ s \right\}}_{
+			\begin{subarray}{c}Differen\\-tiator\end{subarray}}
+		- \mathcal{L}^{-1} \left\{ x \right\}
+	\right)
+\]
+Die Rücktransformierte der Übertragungsfunktion ergibt demnach
+\[
+	s_t(t) = \frac{1}{y} \left( \dot\delta(t) - x\delta(t) \right)
+\]
+Diese Steuerung lässt sich so sicherlich nicht realisieren, da dazu ein
+Diracstoss $\delta(t)$ als auch dessen Ableitung $\dot\delta(t)$ notwendig
+ist.

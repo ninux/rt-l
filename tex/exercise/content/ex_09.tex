@@ -1,0 +1,31 @@
+\section{Regler}
+
+\subsection{Blockschaltbild}
+
+\begin{figure}[h!]
+	\centering
+	\begin{tikzpicture}[node distance=2cm]
+		% nodes
+		\node [input] (in0) {};
+		\node [sum, right of=in0] (in1) {$\Sigma$};
+		\node [function, right of=in1] (c) {$C$};
+		\node [function, right of=c] (p1) {$P_1$};
+		\node [sum, right of=p1] (sum) {$\Sigma$};
+		\node [function, above of=p1] (p2) {$P_2$};
+		\node [input, left of=p2] (in2) {};
+		\node [dot, right of=sum] (out1) {};
+		\node [output, right of=out1] (out2) {};
+		\node [output, below of=out1] (out3) {};
+		% arrows
+		\draw[->] (in0) node[anchor=east] {$\Omega_r$} -- (in1);
+		\draw[->] (in1) -- (c);
+		\draw[->] (in2) node[anchor=east] {$\Gamma$} -- (p2);
+		\draw[->] (c) -- (p1);
+		\draw[->] (p1) -- (sum);
+		\draw[->] (p2) -| (sum);
+		\draw[->] (sum) -- (out2) node[anchor=west] {$\Omega$};
+		\draw[->] (out1) |- (out3) -| (in1);
+		% legend
+	\end{tikzpicture}
+	\caption{Blockschaltbild der Drehzahlregelung (``\emph{closed loop}'')}
+\end{figure}

@@ -1,2 +1,58 @@
 \section{Stabilitätsreserve}
+Für das Bestimmen der Stabilitätsreserve sollen zwei Wertebereiche für den
+Regler gewählt werden.
+\[
+	K_p  = \left\{
+		\begin{array}{l}
+			K_p < \frac{1}{K_g} \\
+			K_p > \frac{1}{K_g}
+		\end{array}
+	\right.
+\]
+Für diese Aufgabe wird angenommen, dass $K_g$ den Proportionalanteil
+der normierten Übertragungsfunktion der Stecke darstellt.
+\[
+	K_g = \frac{y}{x} = \frac{K}{K^2 + \alpha R}
+\]
+Da keine expliziten Werte gegeben sind, wird zunächt der Grenzfall
+betrachtet mit
+\[
+	K_p = \frac{1}{K_g} = \frac{K^2 + \alpha R}{K}
+\]
+Die Übertragungsfunktion für den relevanten Signalpfad ergibt sich somit zu
+\[
+	L(s) = \frac{1}{K_g} \cdot \frac{K_g}{1 + T_1 \cdot s}
+	= \frac{1}{1 + T_1 \cdot s} 
+	= \frac{1}{1 + \frac{1}{\frac{1}{J} \cdot \left(
+		\alpha + \frac{K^2}{R} \right) } \cdot s }
+\]
+Das daraus resultierende Glied stellt einen Tiefpass dar (PT$_1$-Glied).
+Dieses hat einen resultierenden Proportionalitätsfaktor von 0, da der 
+Regler $K_g$ reziprok als Faktor inplementiert. Somit ergibt sich der
+Verlauf eines Tiefpasses mit $G_0 = 0$. Eine Skalierung beim Regler
+verändert das Verhalten der Übertragung in der Weise, dass legiglich die
+DC-Verstärkung abgehiben oder abgesenkt wird. Dies ist in der Abbildung
+\ref{fig:ex_13_bode} dargestellt.
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=\textwidth]{../../matlab/exercise/ex_13/ex_13_bode.pdf}
+	\caption{Bode-Diagramm des Grenzfalls}
+	\label{fig:ex_13_bode}
+\end{figure}
+Die Stabilitätsreserven (Amplitudenreserve $A_R$ und Phasenreserve
+$\varphi_R$) sind dirket deutbar aus dem Plot \ref{fig:ex_13_bode}.
 
+\subsection{Grenzfall $K_p = {K_g}^{-1}$}
+Für den Grenzfall wird deutlich, dass der Durchtritt ($G = 0$dB) schon
+bei einer Phasenverschiebung von $\varphi > 0^{\circ}$ erfolgt.
+Da es sich um einen einfachen Tiefpass (Tiefpass erster Ordnung bzw.
+PT$_1$-Glied) handelt, wird dessen Phase
+asymptotisch gegen $-90^{\circ}$ gehen. Somit ergibt sich eine unendliche
+Amplitudenreserve $A_R = \infty$. Die Phasenreserve ist dabei exakt
+$\varphi_R = 180^{\circ}$, da der Durchtritt bereits bei
+$\varphi > 0^{\circ}$ erfolgt.
+
+\subsection{$K_p > {K_g}^{-1}$}
+
+
+\subsection{$K_p < {K_g}^{-1}$}

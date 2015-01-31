@@ -53,10 +53,26 @@ $\varphi_R = 180^{\circ}$, da der Durchtritt bereits bei
 $\varphi > 0^{\circ}$ erfolgt.
 
 \subsection{$K_p > {K_g}^{-1}$}
+Wird ein Proportionalitätsfaktor $K_p > {K_g}^{-1}$ gewählt, so wird der
+Amplitudengang des Übertragungsgliedes linear nach oben geschoben im
+Bode-Diagramm. Für die Stabilität bedeutet dies, dass der Durchtritt
+später erfolgt und die Phasendrehung bereits weiter propagiert ist.
+Für die Amplitudenreserve spielt dies keine Rolle, da hier ein System
+erster Ordnung vorliegt (PT$_1$-Glied) mit einer maximalen Phasendrehung
+von $\varphi = -90^{\circ}$. Die Phasenreserve jedoch wird durch den
+Versatz der Durchtriffsfrequenz tangiert. Diese kann somit bis auf
+$90^{\circ}$ reduziert werden.
 
 \subsection{$K_p < {K_g}^{-1}$}
+Wird ein Proportionalitätsfaktor $K_p < {K_g}^{-1}$ gewählt, so wird der
+Amplitudengang des Übertragungsgliedes linear nach unten geschoben im
+Bode-Diagramm mit $G_0 < 0$dB. Für die Stabilität bedeutet dies, dass der
+Durchtritt nie erfolgt. Für die Amplitudenreserve spielt dies keine Rolle,
+da hier ein System erster Ordnung vorliegt (PT$_1$-Glied) mit einer
+maximalen Phasendrehung von $\varphi = -90^{\circ}$. Die Phasenreserve
+wird so aber unendlich gross, da kein Durchtritt vorliegt ($G_0 = 0$dB).
 
-\subsection{MATLAB Script und Ergebnisse}
+\subsection{MATLAB Script und Simulationsergebnisse}
 
 \lstinputlisting{../../matlab/exercise/ex_13/ex_13_init.m}
 \lstinputlisting{../../matlab/exercise/ex_13/ex_13_bode.m}

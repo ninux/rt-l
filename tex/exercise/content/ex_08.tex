@@ -55,4 +55,31 @@ Proportionalanteil der Strecke entspricht.
 	S_t(s) = K_p \qquad  P_1(s) = \frac{y}{s-x} = \frac{K_p}{s-x}
 \]
 
-\subsection{Simulation und Bewertung der Proportionalsteuerung}
+\subsubsection{MATLAB/Simulink-Modell der Steuerung}
+
+\lstinputlisting{../../matlab/exercise/ex_08/ex_08_init.m}
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[scale=1]{../../matlab/exercise/ex_08/ex_08_model.pdf}
+	\caption{Simulink-Modell der Proportionalsteuerung}
+\end{figure}
+
+\subsection{Analyse der Proportionalsteuerung}
+
+\subsubsection{Unterschiedliche Proportionalanteile von $S_t(s)$ und $P_1(s)$}
+Die Auslegung des Proportionalitätsgliedes der Steuerung $S_t(s)$ hat direkt
+proportionalen Einfluss auf die Ausgangsgrösse. Wird diese Höher oder tiefer
+gewählt als jene der Strecke, so ergibt sich ein statischer Regelfehler.
+
+\subsubsection{Angelegtes Lastmoment $\Gamma \neq 0$}
+Ist eim Lastmoment angelget $\Gamma \neq 0$ so stellt sich dadurch ein Offest
+ein am Ausgang. Dieser Offset ist von der Steuerung nicht berücksichtigt und
+führt zu einem massiven statischen Regelfehler.
+
+\subsubsection{Fazit}
+Eine Steuerung ist nicht geeignet für dieses System da zum einen ein
+anliegendes Lastmoment unberücksichtigt bliebt (statischer Regelfehler bzw.
+Offset) und über den Signalpfad nur eine lineare bzw. proportionale
+Verstärkung der Eingangsgrösse stattfindet. Diese überlegert sich linear mit
+den Einwirkungen des anliegenden Lastmoments.

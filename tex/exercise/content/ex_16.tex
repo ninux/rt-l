@@ -1,0 +1,25 @@
+\section{Stationäre Regeldifferenz}
+Die stationäre Regeldifferenz lässt sich mittels des Endwertsatzes von
+Laplace ermitteln.
+\[
+	\omega(\infty)
+	= \lim_{s \rightarrow 0} s \cdot G_F(s) \cdot \Omega(s)	
+\]
+Hierbei ist $G_F(s)$ die Führungsübertragungsfunktion und $\Omega(s)$ die
+Laplace-Transformierte des Eingangssignals. Dieses soll hier als
+Einheitssprung mit der Amplitude 1 gegeben sein.
+\[
+	\omega(t)
+	= 1 \cdot \sigma(t) \quad \laplace \quad \Omega(s) = \frac{1}{s}
+\]
+Wendet man den Endwertsatz an auf die gegebenen Funktionen so ergibt sich
+\[
+	\omega(\infty)
+	= \lim_{s \rightarrow 0} s \cdot G_F(s) \cdot \Omega(s)	
+	= s \cdot \frac{
+		K_p \cdot K_{g_1}
+	}{
+		1 + T_1 \cdot s + K_p + K_{g_1}
+	} \cdot \frac{1}{s}
+	= \frac{K_p \cdot K_{g_1}}{1 + K_p \cdot K_{g_1}}
+\]

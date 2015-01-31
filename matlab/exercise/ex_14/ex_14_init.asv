@@ -10,7 +10,7 @@ y = (K/(J*R));
 z = -(1/J);
 
 % define inputs
-G = 0;      % torque
+G = 0K;      % torque
 
 % define control system
 s = tf('s');    % define comples variable s

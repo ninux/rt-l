@@ -1,0 +1,14 @@
+\section{Übertragungsfunktion des offene Regelkreises}
+Der Reglekreis hat zwei Eingänge. An einem der Eingänge liegt die
+Referenzdrehzahl $\omega_r$ an. Der andere Eingang dient der Störgrösse
+$\Gamma$ und ist nicht von der Referenzdrehzahl abhängig. Somit lässt
+sich der Offene Reglekreis formulieren aus der Summe dieser zwei Signalpfade
+welche überlagert am Ausgang anliegen.
+\[
+	\omega = \omega_r \cdot L(s) + \Gamma \cdot P_2(s)
+\]
+Die Übertragungsfunktion des Pfades welcher vom Eingang mit der Referenzdrehzahl
+zum Ausgang führt, kann somit isoliert betrachtet werden.
+\[
+	L(s) = C(s) \cdot P_1(s) = C(s) \cdot \frac{y}{s-x}	
+\]

@@ -1,0 +1,38 @@
+\section{Übertragungsfunktion}
+Die Übertragungsfunktion des relevanten Signalpfades für die Referenzdrezhal
+ergit sich zu
+\[
+	L(s) = C(s) \cdot P_1(s) = K_p \cdot \frac{y}{s-x}
+\]
+Diese Funktion kann so umgeformt werden, dass das PT$_1$-Glied ($P_1(s)$)
+in der Art normiert wird, dass der Nenner die Form $(1 \pm k \cdot s)$ erhält.
+\[
+	L(s) = K_p \cdot \frac{y}{s-x} =
+	K_p \cdot \frac{\frac{y}{x}}{\frac{s-x}{x}} =
+	K_p \cdot \frac{\frac{y}{x}}{\frac{1}{x} \cdot s -1}
+\]
+Führt man die zugehörigen Resubstitutionen durch so ergibt sich die explizite
+Übertragungsfunktion.
+\[
+	K_p := \frac{K}{K^2 + \alpha R}, \qquad
+	y := \frac{K}{J R}, \qquad
+	x := -\frac{1}{J} \left( \alpha + \frac{K^2}{R} \right)
+\]
+\[
+	L(s) 
+	= \frac{K}{K^2 + \alpha R} \cdot \frac{
+			-\frac{K}{K^2 + \alpha R}
+		}{
+			-1 - \frac{1}{\frac{1}{J} \left(
+				\alpha + \frac{K^2}{R}
+			\right)} \cdot s
+		}
+	= \frac{K}{K^2 + \alpha R} \cdot \frac{
+			\frac{K}{K^2 + \alpha R}
+		}{
+			1 + \frac{1}{\frac{1}{J} \left(
+				\alpha + \frac{K^2}{R}
+			\right)} \cdot s
+		}
+	= 19.61 \cdot \frac{19.61}{1 + 0.049 \cdot s}
+\]

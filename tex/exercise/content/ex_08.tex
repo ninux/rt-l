@@ -46,3 +46,13 @@ Die Rücktransformierte der Übertragungsfunktion ergibt demnach
 Diese Steuerung lässt sich so sicherlich nicht realisieren, da dazu ein
 Diracstoss $\delta(t)$ als auch dessen Ableitung $\dot\delta(t)$ notwendig
 ist.
+
+\subsection{Proportionalsteuerung}
+Statt der Steuerung als Inversion der Strecke wird nun eine Steuerung
+implementiert mit einem reinem Proportionalglied, welches exakt dem 
+Proportionalanteil der Strecke entspricht.
+\[
+	S_t(s) = K_p \qquad  P_1(s) = \frac{y}{s-x} = \frac{K_p}{s-x}
+\]
+
+\subsection{Simulation und Bewertung der Proportionalsteuerung}

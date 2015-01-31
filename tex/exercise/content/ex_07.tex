@@ -1,0 +1,24 @@
+\section{Steuerung}
+
+\begin{figure}[h!]
+	\centering
+	\begin{tikzpicture}[node distance=2cm]
+		% nodes
+		\node [input] (in1) {};
+		\node [function, right of=in1] (st) {$S_t$};
+		\node [function, right of=st] (p1) {$P_1$};
+		\node [sum, right of=p1] (sum) {$\Sigma$};
+		\node [function, above of=p1] (p2) {$P_2$};
+		\node [input, left of=p2] (in2) {};
+		\node [output, right of=sum] (out) {};
+		% arrows
+		\draw[->] (in1) node[anchor=east] {$\Omega_r$} -- (st);
+		\draw[->] (in2) node[anchor=east] {$\Gamma$} -- (p2);
+		\draw[->] (st) -- (p1);
+		\draw[->] (p1) -- (sum);
+		\draw[->] (p2) -| (sum);
+		\draw[->] (sum) -- (out) node[anchor=west] {$\Omega$};
+		% legend
+	\end{tikzpicture}
+	\caption{Blockschaltbild der Drehzahlsteuerung (``\emph{open loop}'')}
+\end{figure}

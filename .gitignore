@@ -1,3 +1,6 @@
+# ignore eitor swap files
+*.swp
+
 # ignore ilias data
 ilias/
 

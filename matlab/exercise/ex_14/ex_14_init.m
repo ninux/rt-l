@@ -10,4 +10,9 @@ y = (K/(J*R));
 z = -(1/J);
 
 % define inputs
-G = 0;      % torque
+G = 0.1;      % torque
+
+% define control system
+s = tf('s');    % define comples variable s
+Kp = -1/(y/x);   % define the control function C = 1/Kg
+P1 = (y/(s-x)); % define the process

@@ -25,11 +25,11 @@ print -dpdf ex_13_bode.pdf
 
 % print the parameters
 file = fopen('results.txt', 'w');
-fprintf(file, 'Parameter:\tC=%i, Ca, Cb\n')
-fprintf(file, 'A.-Reserve:\t%i, %i, %i\n', C_ar, Ca_ar, Cb_ar);
-fprintf(file, 'P.-Reserve:\t%i, %i, %i\n', C_pr, Ca_pr, Cb_pr);
-fprintf(file, 'Grenzfreq.:\t%i, %i, %i\n', C_wcg, Ca_wcg, Cb_wcg);
-fprintf(file, 'G0-Freq.:\t%i, %i, %i\n', C_wcp, Ca_wcp, Cb_wcp);
+fprintf(file, 'Parameter:\tC=%1.2i, C=%1.2i, C=%1.2i\n', C, Ca, Cb);
+fprintf(file, 'A.-Reserve:\t%1.2i, %1.2i, %1.2i\n', C_ar, Ca_ar, Cb_ar);
+fprintf(file, 'P.-Reserve:\t%1.2i, %1.2i, %1.2i\n', C_pr, Ca_pr, Cb_pr);
+fprintf(file, 'Grenzfreq.:\t%1.2i, %1.2i, %1.2i\n', C_wcg, Ca_wcg, Cb_wcg);
+fprintf(file, 'G0-Freq.:\t%1.2i, %1.2i, %1.2i\n', C_wcp, Ca_wcp, Cb_wcp);
 fclose(file);
 
 % get the system-parameters

@@ -1,0 +1,79 @@
+\section{Parameter des PI-Reglers}
+Für die Betrachtung des offenen Regelkreises mit dem PI-Regler wird dieser
+in einem ersten Schritt für den Grenzfall $T_i = \tau_g$ ausgelegt.
+\[
+	\tau_g := \frac{J R}{K^2 + \alpha R} \approx 0.05 
+\]
+Somit ergibt sich die folgende Übertragungsfunktion für den offenen
+Regelkreis.
+\[
+	L(s)
+	= C(s) \cdot P_1(s)
+	= K_p \cdot \left(
+		1 + \frac{1}{T_i s}
+	\right) \cdot \left(
+		\frac{y}{s-x}
+	\right)
+	= \underbrace{\left(
+		K_p + \frac{
+			K_p \left(K^2 + \alpha R\right)
+		}{JR} \cdot \frac{1}{s}
+	\right)}_{\text{PI-Regler}} \cdot \underbrace{\left(
+		\frac{
+			\frac{K}{R \left(\alpha + \frac{K^2}{R}\right)}
+		}{
+			1 + \frac{J}{\alpha + \frac{K^2}{R}} \cdot s
+		}
+	\right)}_{\text{PT$_1$-Strecke}}
+\]
+Aus der oben aufgeführten Übertragungsfunktion $L(s)$ lassen sich nun
+direkt die Kennwerte für das Bode-Diagramm auslesen. Der Durchtrittspunkt
+$\omega_D$ ist gegeben durch den Faktor zum Integralanteil $s^{-1}$.
+\[
+	\text{I}: \qquad \underbrace{k_i}_{\omega_D} \cdot \frac{1}{s}
+\]
+Dieser ist aus obiger Übertragungsfunktion direkt auszulesen.
+\[
+	L(s) = \left(
+		K_p + \underbrace{\frac{
+			K_p \left(K^2 + \alpha R\right)}{JR}}_{\omega_D}
+		\cdot \frac{1}{s}
+	\right) \cdot \left(
+		\frac{
+			\frac{K}{R \left(\alpha + \frac{K^2}{R}\right)}
+		}{
+			1 + \frac{J}{\alpha + \frac{K^2}{R}} \cdot s
+		}
+	\right)
+\]
+Der Summand $K_p$ bildet dabei lediglich die Limitierung für die Dämpfung.
+D.h., dass die Verstärkung asymtotisch zu 0 geht statt logarithmisch (linear
+im Bode-Diagramm mit logarithmischer Darstellung) nach $\infty$, wie dies
+beim idealen Integrator der Fall ist (hier liegt ein PI-Glied vor).
+Dieser P-Anteil bewirkt auch eine Phasenhebung von $+90^{\circ}$ (ausgehend
+von $-90^{\circ}$ für $\omega \rightarrow 0$ hervorgerufen durch den
+Integrator). Die Bode-Diagramme für diese Auslegung sind in der Abbildung
+\ref{fig:ex_19_bode_border} dargestellt. In dieser Abbildung ist deutlich
+zu erkennen, dass sich die Phasenhebung des PI-Gliedes und die Phasensenkung
+des PT$_1$-Gliedes gegenseitig aufheben, so dass eine Phase von
+$\varphi = 90^{\circ}$ reusltiert. Auch der Amplitudengang wird durch die
+Kombination von PI- und PT$_1$-Glied so verändert, dass ein Amplitudengang
+eines idealen Integrators resultiert. Die Abbildung
+\ref{fig:ex_19_bode_variants} zeigt den Einfluss der Auslegung von $T_i$
+im Verhältnis zu $\tau_g$.
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=1\textwidth]{../../matlab/exercise/ex_19/ex_19_bode.pdf}
+	\caption{Bode-Diagramm des Reglers $C(s)$, der Strecke $P_1(s)$ und des
+		direkten Signalpfades $L(s)$.}
+	\label{fig:ex_19_bode_border}
+\end{figure}
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=1\textwidth]{../../matlab/exercise/ex_19/ex_19_bode_02.pdf}
+	\caption{Bode-Diagramm von $L(s)$ für $T_i = \tau_g$,
+		$T_i > \tau_g$, $T_i < \tau_g$.}
+	\label{fig:ex_19_bode_variants}
+\end{figure}

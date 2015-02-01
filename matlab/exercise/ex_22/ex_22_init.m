@@ -14,11 +14,9 @@ G = 0;      % torque
 
 % define control system
 s = tf('s');    % define comples variable s
-Kp = 1;  % define the P-Factor = 1
+Kp = -1/(y/x);  % define the P-Factor
 P1 = (y/(s-x)); % define the process
 P2 = (z/(s-x)); % define the disturbance
-C = (Kp + ( (Kp*(K^2+a*R))/(J*R) ) * (1/s));    % define the control for T_i = \tau
-Ca = (Kp + ( (Kp*(K^2+a*R))/(J*R*5) ) * (1/s)); % define the control for T_i > \tau
-Caa = (Kp + ( (Kp*(K^2+a*R))/(J*R*10) ) * (1/s)); % define the control for T_i > \tau
-Cb = (Kp + ( (Kp*10*(K^2+a*R))/(J*R) ) * (1/s)); % define the control for T_i < \tau
+C = (Kp + ( (Kp*(K^2+a*R))/(J*R) ) * (1/s));        % define the control for T_i = \tau
 L = C*P1;       % define the direct path
+ki = ((Kp*(K^2+a*R)) / (J*R));  % define integrator constant

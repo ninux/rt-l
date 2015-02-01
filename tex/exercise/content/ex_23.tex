@@ -1,0 +1,42 @@
+\section{Stationäre Regeldifferenz des PI-Reglers}
+Um die stationäre Regeldifferenz zu ermitteln, muss zunächst die
+Übertragungsfunktion formuliert werden.
+\[
+	G_F(s) = \frac{G_0(s)}{1+G_0(s)}
+\]
+\[
+	G_0(s)
+	= C(s) \cdot P_1(s)
+	= K_p \left( 1 + \frac{1}{T_i s} \right) \frac{y}{s-x}
+	= \frac{K_p(T_i s + 1) y}{T_i s (s-x)}
+\]
+\[
+	G_F(s)
+	= \frac{G_0(s)}{1 + G_0(s)}
+	= \frac{
+		\left( \frac{K_p(T_i s + 1) y}{T_i s (s-x)} \right)
+	}{
+		1 + \left( \frac{K_p(T_i s + 1) y}{T_i s (s-x)} \right)
+	}
+	= \frac{
+		K_p y (T_i s + 1)
+	}{
+		T_i(s^2 - sx) + K_p y (T_i s + 1)
+	}
+\]
+\[
+	\omega(\infty)
+	= \lim_{s \rightarrow 0} \left(
+		\underbrace{s \cdot \Omega(s)}_{1} \cdot G_F(s)
+	\right)
+	= \lim_{s \rightarrow 0} G_F(s)
+	= K_p \cdot y \cdot \lim_{s \rightarrow 0} \left(
+		\frac{
+			\overbrace{T_i s}^{0} + 1
+		}{
+			\underbrace{T_i(s^2 - sx)}_{0} 
+			+ \underbrace{K_p y (T_i s + 1)}_{K_p y}
+		}
+	\right)
+	= 1
+\]

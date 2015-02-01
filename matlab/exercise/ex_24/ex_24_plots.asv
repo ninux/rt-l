@@ -1,0 +1,7 @@
+run('ex_24_init.m') % init the system parameters
+
+sim('ex_24_model')  % run the model
+
+% create the plots
+plot(Motorvoltage.time, Motorvoltage.signals.values);
+print -dpdf ex_24_

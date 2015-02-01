@@ -1,0 +1,33 @@
+\section{Signalbegrenzung}
+
+\subsection{MATLAB/Simulink-Modell}
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=1\textwidth]{../../matlab/exercise/ex_24/ex_24_model.pdf}
+	\caption{Simulink-Modell des geregelten Motors mit Signalbegrenzung}
+\end{figure}
+
+\subsection{Simulationsergebnisse}
+Je niedriger $K_p$ gewählt wird, desto träger ist der Ausgleichsvorgang.
+Die Drehzahl reagiert mit einer $e$-Kurve auf einen Sprung. Rippel oder
+Schwingungen auf der Drehzahl sind jedoch keine vorhanden. Auch bei der
+Eingangsspannung des Motors ist keinerlei Rippel zu beobachten.
+
+Wählt man aber ein hohes $K_p$, so ist der Ausgleichsvorgang linear. Die
+Spannung am Motoreneingang zeigt dann jedoch dutliche Rippel bzw.
+Schwingungen auf.
+
+\begin{figure}[h!]
+	\centering
+	\begin{subfigure}{0.45\textwidth}
+		\includegraphics[width=1\textwidth]{../../matlab/exercise/ex_24/ex_24_01.pdf}
+		\caption{$u(t)$ und und $\omega(t)$ bei kleinem $K_p$}
+	\end{subfigure}
+	\hfill{}
+	\begin{subfigure}{0.45\textwidth}
+		\includegraphics[width=1\textwidth]{../../matlab/exercise/ex_24/ex_24_02.pdf}
+		\caption{$u(t)$ und $\omega(t)$ bei grossen $K_p$}
+	\end{subfigure}
+	\caption{Simulationen verschiedener $K_p$}
+\end{figure}

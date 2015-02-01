@@ -4,12 +4,15 @@ Um die stationäre Regeldifferenz zu ermitteln, muss zunächst die
 \[
 	G_F(s) = \frac{G_0(s)}{1+G_0(s)}
 \]
+Die \emph{open-loop}-Übertragungsfunktion $G_0(s)$ ist gegeben als
 \[
 	G_0(s)
 	= C(s) \cdot P_1(s)
 	= K_p \left( 1 + \frac{1}{T_i s} \right) \frac{y}{s-x}
 	= \frac{K_p(T_i s + 1) y}{T_i s (s-x)}
 \]
+Mit dieser lässt sich nun die \emph{closed-loop}-Übertragungsfunktion
+formulieren zu
 \[
 	G_F(s)
 	= \frac{G_0(s)}{1 + G_0(s)}
@@ -24,6 +27,8 @@ Um die stationäre Regeldifferenz zu ermitteln, muss zunächst die
 		T_i(s^2 - sx) + K_p y (T_i s + 1)
 	}
 \]
+Für die Anwendung des Endwertsatzes der Laplace-Transformation ist das
+Eingangssignal angenommen als Einheitssprung mit der Amplitude 1.
 \[
 	\omega(\infty)
 	= \lim_{s \rightarrow 0} \left(
@@ -40,3 +45,5 @@ Um die stationäre Regeldifferenz zu ermitteln, muss zunächst die
 	\right)
 	= 1
 \]
+Der Endwert entspricht also zu 100\% der Eingangsgrösse, somit existiert
+kein stationäre Regelfehler.

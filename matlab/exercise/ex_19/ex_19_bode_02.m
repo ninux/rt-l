@@ -5,8 +5,10 @@ run('ex_19_init.m');
 hold on
 bode(C*P1);    % create the bode-plot for the control
 bode(Ca*P1);   % create the bode-plot fot the process
-bode(Cb*P1);    % create the bode-plot for the direct-path
-legend('Ti = tg', 'Ti > tg', 'Ti < tg');
+bode(Caa*P1);  % create the bode-plot fot the process
+bode(Cb*P1);   % create the bode-plot for the direct-path
+bode(Cbb*P1);  % create the bode-plot for the direct-path
+legend('Ti = tg', 'Ti > tg', 'Ti >> tg', 'Ti < tg', 'Ti << tg');
 hold off
 
 % save the plot

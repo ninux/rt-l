@@ -1,0 +1,21 @@
+\section{Regleridentifikation}
+Der Regler sei gegeben als
+\[
+	C(s) := K(s) = K_p \left( 1 + \frac{1}{T_i s} \right)
+	= \underbrace{K_p}_{P} + \underbrace{\frac{K_p}{T_i} \cdot \frac{1}{s}}_{I}
+	= K_p \left( \frac{T_i s}{T_i s} + \frac{1}{T_i s} \right)
+	= K_p \left( \frac{T_i s + 1}{T_i s} \right)
+\]
+Deutlich zu erkennen sind dabei der Proportionalanteil und der Integralanteil
+der Übertragungsfunktion. Es handelt sich hier eindeutig um einen PI-Regler.
+Isoliert man die beiden Anteile, so ergeben sich die Funktionen
+\[
+	I: \qquad \frac{K_p}{T_i} \cdot \frac{1}{s} 
+	= X(s) \cdot \frac{1}{s}
+		\quad \Laplace
+		\quad \frac{K_p}{T_i} \int_{0^-}^{t} x(t)\,dt
+\]
+\[
+	P: \qquad K_p
+\]
+wobei $x(t)$, $X(s)$ die Eingangsgrösse beschreibt. 

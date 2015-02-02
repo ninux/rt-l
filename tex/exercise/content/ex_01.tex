@@ -60,17 +60,42 @@ werden die folgenden Annahmen getroffen
 \subsection{Plausibilitätsprüfung}
 Um die plausibilität des Modells zu prüfen weden spezifische Zustände geprüft.
 
-\subsubsection{Unbelastete Welle}
+\subsubsection{Unbelastete \& belastete Welle}
 Wird der Motor mit positiver Spannung und ohne Lastmoment betireben, so muss
 sich eine positive Drehzahl einstellen. Die Motorspannung ist mit einer
 Sprungfunktion gegeben mit der Amplitude 1. Die Simulation zeigt, dass sich
-eine Drehzahl von 19.6 einstellt.
+eine Drehzahl von 19.6 einstellt (siehe Abbildung \ref{fig:ex_01_plot_01}).
 
-\subsubsection{Belastete Welle}
 Liegt ein positives Lastmoment an, wobei keine Spannung anliegt, so muss sich
 eine negative Drehzahl einstellen. Für diese Prüfung ist ein Lastmoment
-$\Gamma(t) = const. = 1$ gewählt worden. Die Simulation zeigt, dass sich eine
-Drehzahl von -196 einstellt.
+$\Gamma(t) = const. = 0.1$ gewählt worden. Die Simulation zeigt, dass sich eine
+Drehzahl von -196 einstellt. Das gleiche gilt in umgekehrter Weise auch für
+ein negatives Lastmoment.
+
+Die verschiedenen Simulationsergebnisse sind in der Abbildung
+\ref{fig:ex_01_plot_01} dargestellt.
+
+\begin{figure}[h!]
+	\centering
+	\begin{subfigure}{0.45\textwidth}
+		\centering
+		\includegraphics[width=1\textwidth]{../../matlab/exercise/ex_01/ex_01_plot_01.pdf}
+		\caption{Drehzahlantwort auf Einheitssprung mit und ohne
+			Belastung an der Welle.}
+		\label{fig:ex_01_plot_01}
+	\end{subfigure}
+	\hfill{}
+	\begin{subfigure}{0.45\textwidth}
+		\centering
+		\includegraphics[width=1\textwidth]{../../matlab/exercise/ex_01/ex_01_plot_02.pdf}
+		\caption{Drehzahlantwort auf Sinuseingabe mit und ohne
+			Belastung an der Welle.}
+		\label{fig:ex_01_plot_02}
+	\end{subfigure}
+	\caption{Dreahzahlverhalten des Modells bei verschiedenen
+		Eingabesignalen und Zuständen.}
+	\label{fig:ex_01_plot}
+\end{figure}
 
 \subsubsection{Überbelastete Welle}
 Wird der Motor mit einem grossen Lastmoment belastet, so muss sich eine
@@ -91,8 +116,6 @@ Wird eine Sinusfunktion für die Motorspannung gewählt, so muss sich auch
 eine Sinusgrösse am Ausgang einstellen. Dies muss für jedes anliegende
 Lastmoment an der Welle gelten. Ein anliegendes Lastmoment muss desn Offset
 der Sinuskurve bilden.
-
-FEHLER!!!
 
 \subsubsection{Fazit}
 Die Plausibilitätsprüfungen deuten darauf hin, dass das modellierte System

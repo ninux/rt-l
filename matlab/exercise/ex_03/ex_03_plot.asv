@@ -1,0 +1,8 @@
+run('ex_03_init.m');            % init the system
+clf                             % clear previous plot
+
+sim('ex_03_model');             % run the model
+hold on;
+plot(Rev1.time, Rev1.signals.values);
+plot(Rev2.time, Rev2.signals.values);
+hold off;

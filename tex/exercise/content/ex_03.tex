@@ -1,6 +1,28 @@
 \section{Übertragungsfunktionen programmieren}
+
+Die Übertragungsfunktionen sind für die Prüfung der Korrektheit
+parallel zum Wirkungsplan in ein Simulink-Modell eingebaut wie in der
+Abbildung \ref{fig:ex_03_model} dargestellt.
+
 \begin{figure}[h!]
 	\centering
 	\includegraphics[scale=1]{../../matlab/exercise/ex_03/ex_03_model.pdf}
-	\caption{Simulink-Modell}
+	\caption{Simulink-Modell mit den Übertragungsfunktionen parallel zum 
+		Wirkungsplan zur Differentialgleichung.}
+	\label{fig:ex_03_model}
 \end{figure}
+
+So konnte ein simulultaner Vergleich der Signale durchgeführt werden, um
+die Korrektheit der Übertragungsfunktionen sicherzustellen. Das Ergebnis
+der Sprungantwort ist in der Abbildung \ref{fig:ex_03_plot} dargestellt.
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[scale=1]{../../matlab/exercise/ex_03/ex_03_plot.pdf}
+	\caption{Plot der Ausgangsgrösse von Wirkungsplan und
+		Übertragungsfunktion}
+	\label{fig:ex_03_plot}
+\end{figure}
+
+Sämtliche Konfigurationen von Anfangsbedingungen und Belastungen haben das
+gleiche Ergebnis geliefert für Wirkungsplan und Übertragungsfunktion.

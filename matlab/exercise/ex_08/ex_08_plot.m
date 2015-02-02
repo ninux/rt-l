@@ -1,18 +1,20 @@
 run('ex_08_init.m')             % init the system
 clf                             % clear previous plot
 
+Kp0 = -(y/x);                   % define ideal Kp
+
 G = 0;                          % set torque = 0
 
 hold on;
-Kp = -(y/x);
+Kp = Kp0;
 sim('ex_08_model');
 plot(Revolutions.time, Revolutions.signals.values, 'b');
 
-Kp = 2*(-(y/x));
+Kp = 2*Kp0;
 sim('ex_08_model');
 plot(Revolutions.time, Revolutions.signals.values, 'r');
 
-Kp = 0.5*(-(y/x));
+Kp = 0.5*Kp0;
 sim('ex_08_model');
 plot(Revolutions.time, Revolutions.signals.values, 'g');
 

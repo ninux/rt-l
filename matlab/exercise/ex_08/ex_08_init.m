@@ -12,5 +12,5 @@ z = -(1/J);
 % define inputs
 G = 0;      % torque
 
-% define control function
-Kp = y;
+% define ideal control function
+Kp = -(y/x);

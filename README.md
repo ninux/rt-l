@@ -1,4 +1,4 @@
-# rt-l
+# RT+L - Regelungstechnik Labor
 
 Persönliches Repository für das Modul "Regelungstechnik Labor" der HSLU-T&amp;A
 

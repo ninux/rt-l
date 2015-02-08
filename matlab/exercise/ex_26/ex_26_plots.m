@@ -1,6 +1,6 @@
 run('ex_26_init.m') % init the system parameters
 
-sim('ex_26_model_f')  % run the model
+sim('ex_26_model_f1')  % run the model for step answer
 
 % clear previous plots
 clf
@@ -20,7 +20,7 @@ clf
 % increate the Kp value
 Kp = Kp*10;
 
-sim('ex_26_model_f')  % run the model
+sim('ex_26_model_f1')  % run the model for step answer
 
 % create the plots
 hold on
@@ -33,8 +33,8 @@ print -dpdf ex_26_02.pdf
 
 % clear previous plots
 clf
-
-sim('ex_26_model_s')  % run the model
+Kp = Kp/10;
+sim('ex_26_model_f2')  % run the model for impulse answer
 
 % create the plots
 hold on
@@ -51,7 +51,7 @@ clf
 % increate the Kp value
 Kp = Kp*10;
 
-sim('ex_26_model_s')  % run the model
+sim('ex_26_model_f2')  % run the model for impulse answer
 
 % create the plots
 hold on

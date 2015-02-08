@@ -1,0 +1,41 @@
+\section{Simulation der Vorsteuerung}
+
+\subsection{Simulink-Modell}
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=1\textwidth]{../../matlab/exercise/ex_28/ex_28_model.pdf}
+	\caption{Simulink-Modell mit Vorsteuerung $F(s)$}
+\end{figure}
+
+\subsection{Simulationsergebnisse}
+Die Simulationen zeigen, dass die Vorsteuerung einen positiven Einfluss hat
+auf den Regler. Zum einen verringern sich die Ausschläge der Fehler und zum
+anderen wird das System dynamischer (siehe Abbildung \ref{fig:ex_28_11} und
+\ref{fig:ex_26_11}).
+\begin{figure}[h!]
+	\centering
+	\begin{subfigure}{0.45\textwidth}
+		\includegraphics[width=1\textwidth]{../../matlab/exercise/ex_28/ex_28_01.pdf}
+		\caption{Sprungantwort für kleines $K_p$}
+		\label{fig:ex_28_01}
+	\end{subfigure}
+	\hfill{}
+	\begin{subfigure}{0.45\textwidth}
+		\includegraphics[width=1\textwidth]{../../matlab/exercise/ex_28/ex_28_02.pdf}
+		\caption{Sprungantwort für grosses $K_p$}
+	\end{subfigure}
+
+	\begin{subfigure}{0.45\textwidth}
+		\includegraphics[width=1\textwidth]{../../matlab/exercise/ex_28/ex_28_11.pdf}
+		\caption{Impulsantwort für kleines $K_p$}
+		\label{fig:ex_28_11}
+	\end{subfigure}
+	\hfill{}
+	\begin{subfigure}{0.45\textwidth}
+		\includegraphics[width=1\textwidth]{../../matlab/exercise/ex_28/ex_28_12.pdf}
+		\caption{Impulsantwort für grosses $K_p$}
+	\end{subfigure}
+
+	\caption{Simulationen der Vorsteuerung für verschiedene $K_p$}
+
+\end{figure}
